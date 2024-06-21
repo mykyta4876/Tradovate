@@ -131,23 +131,24 @@ function histogramPlotter(canvas, indicatorInstance, history) {
             
             const x = p.x.get(item);
             
-            
-            canvas.drawRect(
-                p.offset(x - 0.3, item.difference),
-                p.offset(x + 0.3, 0),
-                {
-                    color: histColor,
-                    relativeWidth: 0.70,
-                    opacity: 0.75,
-                });
+            for(let j=0; j<=0.7; j+=0.1) {
+                canvas.drawLine(
+                    p.offset(x-0.35+j, item.difference),
+                    p.offset(x-0.35+j, 0),
+                    {
+                        color: histColor,
+                        relativeWidth: 0.1,
+                        opacity: 1,
+                    });
+            }
         }
 
         item1 = item;
     }
 }
 module.exports = {
-    name: "MyMACD",
-    description: "MyMACD",
+    name: "MACD",
+    description: "YAZDANI - MACD",
     calculator: macdMultiColoredHistogram,
     areaChoice: meta.AreaChoice.NEW,
     tags: ["Otto.Blink"],

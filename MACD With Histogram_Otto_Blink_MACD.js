@@ -131,7 +131,6 @@ function histogramPlotter(canvas, indicatorInstance, history) {
             
             const x = p.x.get(item);
             
-            
             canvas.drawLine(
                 p.offset(x, item.difference),
                 p.offset(x, 0),
